@@ -1,0 +1,426 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #1da1f2; /* Matching the theme color */
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logo-container {
+  margin-bottom: 10px;
+}
+
+/* Navigation Bar Styling */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center the nav items */
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00; /* Yellow hover effect for contrast */
+}
+
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  margin-right: 10px;
+}
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for AddBook */
+.form-heading {
+  font-size: 2rem;
+  color: #1da1f2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for each form group (label and input) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+/* Input field hover/focus styling */
+.form-group input:hover, .form-group input:focus {
+  border-color: #1da1f2;
+  outline: none;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:focus {
+  outline: none;
+}
+/* Overall book list container */
+.book-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.book-list-title {
+  text-align: center;
+  color: #1da1f2; /* Twitter Blue */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Book list styling */
+.book-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-item {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.book-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Book title and author */
+.book-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.book-author {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Book action button */
+.book-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #1da1f2; /* Default heart color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.like-button:hover {
+  color: #d07e98; /* Color on hover */
+}
+
+/* Liked heart color */
+.like-button.liked {
+  color: #e0245e; /* Red color when liked */
+}
+
+.like-button:focus {
+  outline: none;
+}
+/* About Page Container */
+.about-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* About Heading */
+.about-heading {
+  font-size: 2.5rem;
+  color: #1da1f2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* About Description */
+.about-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+/* Optional Background Image for About Section (similar to Home) */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('nsc2.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional Hero Title */
+.about-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 670px) {
+  .book-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .book-actions {
+    margin-top: 10px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-heading {
+    font-size: 1.8rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+  }
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+  .footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin-bottom: 10px;
+  }
+}
+/* General layout of the home page */
+.home-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fullscreen loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything else */
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+/* Loading message style */
+.loading-message {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly dark background for readability */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade out effect for the loading overlay */
+.loading-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when fading out */
+}
+
+/* Hero Image Section */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('nsc.jpg'); /* Hero image, replace with your desired image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff; /* Set the text color to white for better contrast */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 0, 0, 0.3); /* Stronger shadow to increase contrast */
+  padding: 10px 20px; /* Add some padding around the text for better readability */
+  border-radius: 8px; /* Optional: round the corners of the text background */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background to increase contrast */
+}
+
+/* Content Section */
+.home-content {
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.home-description {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #555;
+}
+
+.footer {
+  background-color: #1da1f2; /* Matching blue color from the theme */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+}
+

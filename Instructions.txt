@@ -1,0 +1,18 @@
+Guide on What to Do:
+App.js:
+State Initialization: Initialize the state with an array of books.
+addBook Function: Implement the addBook function to add new books to the state.
+Props Passing: Pass the books array to the Books component and the addBook function to the AddBook component as props.
+
+Books.js:
+Render Books: Implement the map function to iterate over the books array (passed via props) and display each book’s title and author.
+
+AddBook.js:
+State Management: Implement state management for the title and author input fields.
+Handle Change: Update the state based on user input in the form fields.
+Handle Submit: Create a new book object and add it to the books array using the addBook function passed via props. Then reset the form.
+
+Final Tips:
+Remember to Use the this Keyword: When referring to state or props inside class components, use this.state, this.props, etc.
+Use Controlled Components: Ensure that the form fields in AddBook.js are controlled components by linking them to the component's state.
+Use map Properly: When mapping over the books array in Books.js, provide a unique key prop for each item in the list.
