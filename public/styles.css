@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
 body {
   font-family: Arial, sans-serif;
 }
@@ -11,9 +14,20 @@ body {
 }
 
 .header-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-family: 'Playfair Display', serif; /* Fancier font */
+  font-size: 3rem; /* Larger font size */
+  font-weight: 700; /* Bold text */
   margin: 0;
+  text-align: center; /* Center the text */
+  color: #0f2640; /* Elegant blue color */
+  letter-spacing: 1px; /* Add some letter spacing for elegance */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.header-title:hover {
+  color: #D94A77; /* Change color on hover */
+  transform: scale(1.1); /* Slightly increase the text size on hover */
 }
 
 .logo-container {
@@ -423,4 +437,23 @@ form label {
   font-size: 1rem;
   font-weight: 400;
 }
+.remove-button {
+  background-color: #f44336; /* Red color */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-button:hover {
+  background-color: #d32f2f;
+}
+.no-books-message {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+
 

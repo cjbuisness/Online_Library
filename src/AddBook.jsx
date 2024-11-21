@@ -19,16 +19,28 @@ class AddBook extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { title, author } = this.state;
-    const newBook = { title, author };
-    
-    // Call addBook function passed via props to add the new book
-    this.props.addBook(newBook);
 
-    // Reset the form
-    this.setState({ title: '', author: '' });
+    // Ensure both title and author are non-empty
+    if (title.trim() && author.trim()) {
+      const newBook = { title, author };
+
+      // Call addBook function passed via props to add the new book
+      this.props.addBook(newBook);
+
+      // Reset the form
+      this.setState({ title: '', author: '' });
+    } else {
+      // Optional: Alert if validation fails
+      alert('Both title and author fields are required!');
+    }
   };
 
   render() {
+    const { title, author } = this.state;
+
+    // Disable the submit button if either title or author is empty
+    const isSubmitDisabled = !(title.trim() && author.trim());
+
     return (
       <div className="form-container">
         <h2 className="form-heading">Add a New Book</h2>
@@ -39,7 +51,7 @@ class AddBook extends Component {
               id="title"
               type="text" 
               name="title" 
-              value={this.state.title} 
+              value={title} 
               onChange={this.handleChange} 
               placeholder="Enter book title"
             />
@@ -50,12 +62,18 @@ class AddBook extends Component {
               id="author"
               type="text" 
               name="author" 
-              value={this.state.author} 
+              value={author} 
               onChange={this.handleChange} 
               placeholder="Enter author's name"
             />
           </div>
-          <button type="submit" className="submit-button">Add Book</button>
+          <button 
+            type="submit" 
+            className="submit-button" 
+            disabled={isSubmitDisabled}
+          >
+            Add Book
+          </button>
         </form>
       </div>
     );

@@ -1,45 +1,38 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
-import '../public/styles.css'; // Import custom CSS file
+import { useLocation } from 'react-router-dom'; 
+import LoadingOverlay from './LoadingOverlay';  // Ensure this path is correct
+import '../public/styles.css';
 
 function Home() {
   const [loading, setLoading] = useState(true);
-  const hasLoaded = useRef(false); // A ref to track if the page has been loaded already
-  const location = useLocation(); // Get the current location (URL path)
+  const hasLoaded = useRef(false); // Track if the page has loaded
+  const location = useLocation(); // Get the current location
 
   useEffect(() => {
     // Only trigger the loading screen on the initial load (not on tab navigation)
     if (!hasLoaded.current && location.pathname === '/') {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 1000); // 3 seconds delay
+      }, 1000);  // 1 second delay for the loading overlay
 
-      // Mark the component as loaded to prevent the overlay on subsequent renders
+      // Mark the component as loaded
       hasLoaded.current = true;
 
-      return () => clearTimeout(timer); // Clean up timer on component unmount
+      return () => clearTimeout(timer);  // Clean up the timer when component unmounts
     } else {
-      // Skip loading screen if it's not the first load or if not on the home page
+      // Skip loading overlay if not the root path
       setLoading(false);
     }
-  }, [location.pathname]); // Dependency on location.pathname to trigger on path change
+  }, [location.pathname]);
 
   return (
     <div className="home-container">
-      {/* Loading overlay */}
-      {loading && (
-        <div className="loading-overlay">
-          <div className="loading-message">
-            Welcome to the Library!
-          </div>
-        </div>
-      )}
-
+      {/* Display the LoadingOverlay if the page is loading */}
+      <LoadingOverlay show={loading} />
       {/* Hero Image Section */}
       <div className="hero-image">
         <h1 className="hero-title">Welcome to the Library</h1>
       </div>
-
       {/* Content Section */}
       <div className="home-content">
         <p className="home-description">

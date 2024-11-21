@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from './Home';
+import Home from './Home';  // Import the Home component with the loading overlay
+import HomePath from './HomePath';  // Import the HomePath component (without overlay)
 import Books from './Books';
 import AddBook from './AddBook';
 import About from './About';
@@ -25,6 +26,14 @@ class App extends Component {
     }));
   };
 
+  // Function to remove a book from the state
+  removeBook = (index) => {
+    this.setState((prevState) => {
+      const updatedBooks = prevState.books.filter((book, i) => i !== index);
+      return { books: updatedBooks };
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -36,7 +45,8 @@ class App extends Component {
             </div>
             <nav>
               <ul className="nav-list">
-                <li><Link to="/">Home</Link></li>
+           
+                <li><Link to="/HomePath">Home</Link></li>
                 <li><Link to="/books">Books</Link></li>
                 <li><Link to="/add-book">Add Book</Link></li>
                 <li><Link to="/about">About</Link></li>
@@ -46,8 +56,9 @@ class App extends Component {
 
           {/* Main Routes */}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/books" element={<Books books={this.state.books} />} />
+            <Route path="/" element={<Home />} />  {/* Ensure the home route shows the loading overlay page */}
+            <Route path="/HomePath" element={<HomePath />} />
+            <Route path="/books" element={<Books books={this.state.books} removeBook={this.removeBook} />} />
             <Route path="/add-book" element={<AddBook addBook={this.addBook} />} />
             <Route path="/about" element={<About />} />
           </Routes>
