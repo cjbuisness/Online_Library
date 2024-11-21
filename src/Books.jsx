@@ -45,34 +45,46 @@ class Books extends Component {
   };
 
   render() {
+    const { books } = this.props;
+
     return (
       <div className="book-list-container" onDoubleClick={(e) => this.handleDoubleClick(parseInt(e.target.closest('.book-item').getAttribute('data-index')))}>
         <h2 className="book-list-title">Book List</h2>
-        <ul className="book-list">
-          {/* Map through the books and display them with modern styling */}
-          {this.props.books.map((book, index) => (
-            <li 
-              key={index} 
-              className="book-item" 
-              data-index={index} // Store the index of the book for later use
-            >
-              <div className="book-card">
-                <div className="book-details">
-                  <h3 className="book-title">{book.title}</h3>
-                  <p className="book-author">by {book.author}</p>
+        {books.length === 0 ? (
+          <p className="no-books-message">This just in! We're bookless!.</p> // Display message if books array is empty
+        ) : (
+          <ul className="book-list">
+            {/* Map through the books and display them with modern styling */}
+            {books.map((book, index) => (
+              <li 
+                key={index} 
+                className="book-item" 
+                data-index={index} // Store the index of the book for later use
+              >
+                <div className="book-card">
+                  <div className="book-details">
+                    <h3 className="book-title">{book.title}</h3>
+                    <p className="book-author">by {book.author}</p>
+                  </div>
+                  <div className="book-actions">
+                    <button
+                      className={`like-button ${this.state.likedBooks.has(index) ? 'liked' : ''}`}
+                      onClick={() => this.handleLike(book, index)}
+                    >
+                      ❤
+                    </button>
+                    <button
+                      className="remove-button"
+                      onClick={() => this.props.removeBook(index)} // Call removeBook from App.jsx
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-                <div className="book-actions">
-                  <button
-                    className={`like-button ${this.state.likedBooks.has(index) ? 'liked' : ''}`}
-                    onClick={() => this.handleLike(book, index)}
-                  >
-                    ❤
-                  </button>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
