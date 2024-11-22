@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from './Home';  // Import the Home component with the loading overlay
-import HomePath from './HomePath';  // Import the HomePath component (without overlay)
+import Home from './Home';  
+import HomePath from './HomePath';  
 import Books from './Books';
 import AddBook from './AddBook';
 import About from './About';
@@ -56,7 +56,7 @@ class App extends Component {
 
           {/* Main Routes */}
           <Routes>
-            <Route path="/" element={<Home />} />  {/* Ensure the home route shows the loading overlay page */}
+            <Route path="/" element={<Home />} />  
             <Route path="/HomePath" element={<HomePath />} />
             <Route path="/books" element={<Books books={this.state.books} removeBook={this.removeBook} />} />
             <Route path="/add-book" element={<AddBook addBook={this.addBook} />} />

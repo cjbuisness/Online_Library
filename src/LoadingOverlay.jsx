@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../public/styles.css'; // Import custom CSS for styling
+import '../public/styles.css';
 
 class LoadingOverlay extends Component {
   render() {

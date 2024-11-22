@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "../public/styles.css";
 
 function HomePath() {
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
 
   return (
     <div className="home-container">

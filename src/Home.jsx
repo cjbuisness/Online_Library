@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom'; 
-import LoadingOverlay from './LoadingOverlay';  // Ensure this path is correct
+import LoadingOverlay from './LoadingOverlay';  
 import '../public/styles.css';
 
 function Home() {
